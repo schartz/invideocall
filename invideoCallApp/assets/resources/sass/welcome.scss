@@ -1,0 +1,61 @@
+@import "app";
+
+.primary-gradient-bg {
+  background:  $primary;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, $secondary, $primary);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, $secondary, $primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.main-nav{
+  margin-bottom: 0 !important;
+}
+
+.main-title{
+  font-size: 3.5rem;
+  margin-bottom: 4rem !important;
+}
+
+.main-subtitle{
+  font-size: 1.5rem;
+}
+
+input.room-creator{
+  margin: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  border-bottom: 1px solid white;
+  text-align: center;
+}
+
+input.room-creator:focus{
+  outline: none;
+}
+
+.subtle-underline{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+}
+
+.footer-welcome-divider{
+  margin: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+img.built-with-tech-image {
+  max-width: 100%;
+  height: 1rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 450px) {
+  .main-title {
+    font-size: 2rem;
+    margin-top:2rem;
+  }
+
+  .main-subtitle {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,43 @@
+@import "app";
+
+body{
+  background:  $primary;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, $secondary, $primary);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, $secondary, $primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.video-holder{
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255,255,255,0.2);
+  position: relative;
+  padding:1rem;
+}
+
+.username-invideo{
+  position: absolute;
+  bottom:0;
+  left:1rem;
+  color: white;
+}
+
+#call-controls-desktop{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  bottom: 0;
+  left: 40%;
+  box-shadow: 0px 0px 10px 0px #000;
+  width: fit-content;
+}
+
+@media (max-width: 450px) {
+  #call-controls-desktop{
+    left: 10%;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 760px) {
+  #call-controls-desktop{
+    left: 25%;
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Video Call</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/dist/css/invideocall.bundle.css" />
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="css/demo_room.css" />-->
+   <!-- <script type="text/javascript" src="js/demo_instant_messaging_rooms.js"></script>
+    <script type="text/javascript" src="js/demo_multiparty.js"></script>-->
+</head>
+
+<body style="min-height:100vh">
+<!--<div>
+    <input type="text" id="roomName">
+    <input type="button" value="Go" onclick="appInit(document.getElementById('roomName').value);">
+    <video id="box0" class="transit boxCommon thumbCommon easyrtcMirror" muted="muted" volume="0" ></video>
+    <video id="box1" class="transit boxCommon thumbCommon" style="visibility:hidden"></video>
+    <video id="box2" class="transit boxCommon thumbCommon" style="visibility:hidden"></video>
+    <video id="box3" class="transit boxCommon thumbCommon" style="visibility:hidden"></video>
+    <div id="textentryBox" onsubmit="sendText()" style="display:none" >
+        <input type="text" id="textentryField"  class="transit boxcommon" /><br>
+        <button id="textentrySubmit" style="float:right;margin-right:1em" onclick="sendText()">Send</button>
+        <button id="textentryCancel" style="float:left;margin-left:1em" onclick="cancelText()">Cancel</button>
+    </div>
+
+    <img id="killButton" class="transit boxCommon" onclick="killActiveBox()" src="images/button_close.png" style="display:none;z-index:3" alt="close button" />
+    <img id="muteButton" class="transit boxCommon" onclick ="muteActiveBox()" src="images/button_mute.png" style="display:none;z-index:3" alt="mute button" />
+    <img id="textEntryButton" class="transit boxCommon" onclick ="showTextEntry()" src="images/textEntry.png" style="z-index:3;display:none" alt="text button" />
+</div>-->
+<div id="mainNavbar">
+    <nav class="navbar is-transparent main-nav">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="../">
+                    <img src="/images/logo.png" alt="Bulma: a modern CSS framework based on Flexbox">
+                </a>
+
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+
+                <div class="navbar-end">
+                    <a class="navbar-item">
+                        4 Users
+                    </a>
+                    <div class="navbar-item">
+                        <span>
+                            {{ roomLink }}
+                        </span>&nbsp;&nbsp;&nbsp;
+                        <button class="button is-danger is-small" @click="copyLink">
+                            Copy Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div id="videoCall">
+    <section class="section">
+        <div class="columns">
+            <div class="column video-holder">
+                <video id="box0" class="transit boxCommon thumbCommon"></video>
+            </div>
+
+            <div class="column video-holder">
+                <video id="box1" class="transit boxCommon thumbCommon" ></video>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column video-holder">
+                <video id="box2" class="transit boxCommon thumbCommon" ></video>
+            </div>
+
+            <div class="column video-holder">
+                <video id="box3" class="transit boxCommon thumbCommon"></video>
+            </div>
+        </div>
+    </section>
+
+    <div id="call-controls-desktop">
+        <div class="columns is-mobile">
+            <div class="column">
+                <button @click="setMicOff" v-if="micOn === 1" class="button is-small is-danger">Turn Mic Off</button>
+                <button @click="setMicOn" v-if="micOn === 0" class="button is-small is-info">Turn Mic on</button>
+            </div>
+            <div class="column">
+                <button @click="setCamOff" v-if="camOn === 1" class="button is-small is-danger">Turn Cam Off</button>
+                <button @click="setCamOn" v-if="camOn === 0" class="button is-small is-info">Turn Cam On</button>
+            </div>
+            <div class="column">
+                <button @click="leaveCall" class="button is-small is-danger">Leave Call</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/dist/js/navbar.js" defer="true"></script>
+<script type="text/javascript" src="/dist/js/invideocall.bundle.js" defer="true"></script>
+</body>
+</html>

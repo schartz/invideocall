@@ -1,0 +1,58 @@
+// Variables
+@import "~bulma/sass/utilities/initial-variables";
+
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+// colors
+$primary: #C33764;
+$color-primary: $primary;
+$secondary: #1D2671;
+$dark: #333540;
+
+.mb-5{
+  margin-bottom:5rem !important;
+}
+
+.main-nav{
+  background: transparent;
+  box-shadow: 0px 0px 10px 0px #000;
+  margin-bottom: 3rem;
+}
+
+.main-nav .navbar-item {
+  color: white
+}
+
+.main-nav .navbar-item:hover {
+  color: white;
+}
+
+.main-nav a.navbar-item:hover {
+  text-decoration: underline;
+}
+
+.navbar-item img {
+  max-height: 2rem;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active{
+  background-color: transparent;
+}
+
+.navbar-menu{
+  background-color: transparent;
+}
+
+.navbar-brand{
+  border-bottom: 1px solid #000;
+}
+
+.navbar-burger span{
+  background-color: white;
+}
+
+.has-dark-bg{
+  color: white;
+  background: $dark;
+}

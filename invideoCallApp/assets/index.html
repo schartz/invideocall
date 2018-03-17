@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>
+        InVideoCall
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/dist/css/welcome.bundle.css">
+</head>
+
+<body>
+    <div class="primary-gradient-bg">
+        <div id="mainNavbar">
+            <nav class="navbar is-transparent main-nav">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="../">
+                            <img src="/images/logo.png" alt="InVideoCall: Hassle Free Video Calls">
+                        </a>
+
+                        <div class="navbar-burger burger" data-target="navMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div id="navMenu" class="navbar-menu">
+
+                        <div class="navbar-end">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Terms
+                            </a>
+                            <a class="navbar-item">
+                                Privacy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <section class="hero is-medium">
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <h1 class="title has-text-white main-title">
+                        Hassle free video calls
+                    </h1>
+                    <h2 class="subtitle has-text-white main-subtitle">
+                        Enter a room name and start talking
+                    </h2>
+
+                    <div>
+                        <input type="text" class="room-creator" id="roomNameInput">
+                        <br>
+                        <button type="button" class="button is-light is-outlined" onclick="createRoomAndChat()">Start Video Call</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--Gradient BG Hero Ends-->
+
+    <section class="is-hidden-tablet section has-dark-bg">
+        <div class="container has-text-centered has-text-white">
+            <h1 class="title has-text-white mb-5">Just in case you were wondering...</h1>
+
+            <div class="columns has-text-white">
+                <div class="column">
+                    <h2 class="subtitle has-text-white has-text-left has-text-weight-bold">
+                        Here's how to use it?
+                    </h2>
+
+                    <div class="columns is-multiline has-text-left">
+                        <div class="column is-12">Enter a room name.</div>
+                        <div class="column is-12">Send the room link to the people you want to talk with</div>
+                        <div class="column is-12">Start talking.</div>
+                    </div>
+                </div>
+                <hr class="divider footer-welcome-divider">
+                <div class="column">
+                    <h2 class="subtitle has-text-white has-text-left has-text-weight-bold">
+                        Here's why use it?
+                    </h2>
+
+                    <div class="columns is-multiline has-text-left">
+                        <div class="column is-12">No registrations.</div>
+                        <div class="column is-12">No downloads or plugins.</div>
+                        <div class="column is-12">Group video conversation from any device. (All you need is a browser)</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider footer-welcome-divider">
+
+            <p class="has-text-white">
+                This is a work in progress.
+                <br><br>
+                Built with:
+                <a href="https://bulma.io/"> <img class="built-with-tech-image" src="images/bulma-logo.png"></a>
+                <a href="https://vuejs.org/"> <img class="built-with-tech-image" src="/images/vuelogo.png"></a>
+                <a href="https://webrtc.org/"> <img class="built-with-tech-image" src="/webrtclogo.png"></a>
+            </p>
+        </div>
+    </section>
+
+    <section class="is-hidden-mobile section has-dark-bg">
+        <div class="container has-text-centered has-text-white">
+            <h1 class="title has-text-white mb-5">Just in case you were wondering...</h1>
+
+            <div class="columns has-text-white">
+                <div class="column">
+                    <h2 class="subtitle has-text-white has-text-left has-text-weight-bold">
+                        Here's how to use it?
+                    </h2>
+
+                    <div class="columns is-multiline has-text-left">
+                        <div class="column is-12 subtle-underline">Enter a room name.</div>
+                        <div class="column is-12 subtle-underline">Send the room link to the people you want to talk with</div>
+                        <div class="column is-12">Start talking.</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 class="subtitle has-text-white has-text-right has-text-weight-bold">
+                        Here's why use it?
+                    </h2>
+
+                    <div class="columns is-multiline has-text-right">
+                        <div class="column is-12 subtle-underline">No registrations.</div>
+                        <div class="column is-12 subtle-underline">No downloads or plugins.</div>
+                        <div class="column is-12">Group video conversation from any device. (All you need is a browser)</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider footer-welcome-divider">
+
+            <p class="has-text-white">
+                This is a work in progress.
+                <br><br>
+                Built with:
+                <a href="https://bulma.io/"> <img class="built-with-tech-image" src="/images/bulma-logo.png"></a>
+                <a href="https://vuejs.org/"> <img class="built-with-tech-image" src="/images/vuelogo.png"></a>
+                <a href="https://easyrtc.com/docs/"> <img class="built-with-tech-image" src="/images/easyrtclogo.png"></a>
+            </p>
+        </div>
+    </section>
+
+
+    <script type="text/javascript" src="/dist/js/navbar.js" defer="true"></script>
+    <script type="text/javascript">
+        function createRoomAndChat() {
+            const roomName = document.getElementById('roomNameInput').value;
+            if(roomName && roomName.trim().length > 0) {
+                const url =  window.location.protocol + '//' + window.location.hostname + '/' + roomName;
+                console.log(url);
+                window.location.href = url;
+
+            } else {
+                console.log('incorrect')
+            }
+        }
+    </script>
+</body>
+
+</html>
