@@ -23,8 +23,8 @@ Running the Server:
 -------------------
 
  - After cloning from project root `cd invideoCallApp`
- - Type `syarn run watch` for compiling assets.
+ - Type `yarn run watch` for compiling assets.
  - In an another terminal instance `sudo node server.js` to run the main application
- - This codebase contains a sample self signed OpenSSL certificate for sppeding up the development process.
+ - This codebase contains a sample self signed OpenSSL certificate for speeding up the development process.
  
- #####Rais an issue if you are stuck. Docs and wiki are coming soon (As soon as I get time)
+ ####Raise an issue if you are stuck. Docs and wiki are coming soon (As soon as I get time)
