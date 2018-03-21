@@ -24,6 +24,10 @@ router.get('/terms', function(req, res) {
     res.sendFile(path.join(__dirname + '/pages/terms.html'));
 });
 
+router.get('/privacy', function(req, res) {
+    res.sendFile(path.join(__dirname + '/pages/privacy.html'));
+});
+
 // generic url for setting up the rooms
 router.get('/old', function(req, res) {
     res.sendFile(path.join(__dirname + '/pages/invideocall-old.html'));
