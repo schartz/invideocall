@@ -1,7 +1,7 @@
 InvideoCall Simple Video Conferencing
 ======================
 
-This system builds on the server example provided by Easyrtc
+This system builds on the server example provided by [Easyrtc](https://easyrtc.com/)
 
 Files and Folders:
 ------------------
