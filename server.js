@@ -48,8 +48,8 @@ app.set('view engine', 'ejs');
 app.use('/', router);
 
 var selfSingedCertificate = {
-    key: fs.readFileSync("/home/schartz/keys/selfSigned.key"),
-    cert: fs.readFileSync("/home/schartz/keys/selfSigned.cert")
+    key: fs.readFileSync(path.join(__dirname, '/ssl/')  + "selfSigned.key"),
+    cert: fs.readFileSync(path.join(__dirname, '/ssl/')  + "selfSigned.cert")
 };
 // Start Express https server on port 443
 var webServer = https.createServer(selfSingedCertificate, app).listen(443);

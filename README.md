@@ -12,9 +12,9 @@ Files and Folders:
  
 Installing Required Modules:
 ----------------------------
+Installation is pretty straightforward. At its very heart, its your run of the mill node app.
 
- - Type `yarn install` in the root folder to install Easyrtc lib.
- - `cd` into `invideoCallApp` folder and run `yarn install` again to fetch the app dependencies.
+ - Execute `yarn install` in the root folder to install dependencies.
  - This will read the package.json file to find and install the required modules including EasyRTC, Express, and Socket.io.
  - Required modules will go into a new 'node_modules' sub-folders.
 
@@ -22,7 +22,6 @@ Installing Required Modules:
 Running the Server:
 -------------------
 
- - After cloning from project root `cd invideoCallApp`
  - Type `yarn run watch` for compiling assets.
  - In an another terminal instance `sudo node server.js` to run the main application
  - This codebase contains a sample self signed OpenSSL certificate for speeding up the development process.
