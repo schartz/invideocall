@@ -4,7 +4,7 @@ var fs      = require("fs");// https server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io");        // web socket external module
-var easyrtc = require("../");               // EasyRTC external module
+var easyrtc = require("easyrtc");               // EasyRTC external module
 var path = require("path");
 
 // Set process name
@@ -49,7 +49,7 @@ app.use('/', router);
 
 var selfSingedCertificate = {
     key: fs.readFileSync("/home/schartz/keys/selfSigned.key"),
-    cert: fs.readFileSync("/home/schartz/keys/selfSigned.crt")
+    cert: fs.readFileSync("/home/schartz/keys/selfSigned.cert")
 };
 // Start Express https server on port 443
 var webServer = https.createServer(selfSingedCertificate, app).listen(443);
